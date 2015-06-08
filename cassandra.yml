@@ -1,8 +1,6 @@
 ---
 # file: cassandra.yml
 
-- include: base.yml
-
 - name: cassandra play
   hosts: localhost
   gather_facts: yes

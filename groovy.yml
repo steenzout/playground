@@ -1,7 +1,5 @@
 ---
-# file: python.yml
-
-- include: base.yml
+# file: groovy.yml
 
 - name: groovy play
   hosts: localhost

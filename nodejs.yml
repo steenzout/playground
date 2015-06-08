@@ -1,7 +1,5 @@
 ---
-# file: python.yml
-
-- include: base.yml
+# file: nodejs.yml
 
 - name: nodejs play
   hosts: localhost

@@ -1,7 +1,5 @@
 ---
-# file: python.yml
-
-- include: base.yml
+# file: java.yml
 
 - name: java play
   hosts: localhost

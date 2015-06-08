@@ -1,8 +1,6 @@
 ---
 # file: python.yml
 
-- include: base.yml
-
 - name: python play
   hosts: localhost
   gather_facts: yes

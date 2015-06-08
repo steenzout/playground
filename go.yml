@@ -1,8 +1,6 @@
 ---
 # file: go.yml
 
-- include: base.yml
-
 - name: golang play
   hosts: localhost
   gather_facts: yes

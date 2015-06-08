@@ -68,8 +68,13 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## Changelog
 
-- vx.y.z : day month year
-    - the change
+- v1.0.0 : 8 Jun 2015
+    - setup environment
+        - Go
+        - Groovy
+        - Java
+        - NodeJS
+        - Python
 
 
 ## Links

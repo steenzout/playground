@@ -1,0 +1,26 @@
+---
+# file: go.yml
+
+- include: base.yml
+
+- name: golang play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+  vars:
+    go_path: "{{ ansible_env.HOME }}/go"
+
+  tasks:
+    - macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - go
+        - go-tools
+
+  post_tasks:
+    - file:
+        path="{{ go_path }}"
+        state=directory
+        mode=0755 group='staff'

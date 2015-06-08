@@ -1,0 +1,17 @@
+---
+# file: python.yml
+
+- include: base.yml
+
+- name: nodejs play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  tasks:
+    - macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - npm

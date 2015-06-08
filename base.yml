@@ -1,0 +1,19 @@
+---
+# file: base.yml
+
+- name: base play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  roles:
+    - { role: ansiblebit.macports, macports_upgrade_outdated: yes }
+
+  tasks:
+    - macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - coreutils
+        - expect

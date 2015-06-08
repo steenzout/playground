@@ -1,8 +1,16 @@
 ---
 # file: playbooks/tests/defaults/main.yml
 
+# base
+expected_which_git: '/opt/local/bin/git'
+expected_which_expect: '/opt/local/bin/expect'
+expected_which_gstdbuf: '/opt/local/bin/gstdbuf'
+expected_which_parallel: '/opt/local/bin/parallel'
+
+# go
 expected_which_go: '/opt/local/bin/go'
 
+# python
 expected_which_python27: '/opt/local/bin/python2.7'
 expected_which_python35: '/opt/local/bin/python3.5'
 

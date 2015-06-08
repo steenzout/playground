@@ -11,7 +11,8 @@
     go_path: "{{ ansible_env.HOME }}/go"
 
   tasks:
-    - macports:
+    - name: install ports
+      macports:
         name="{{ item }}"
         state=present
       sudo: yes
@@ -19,8 +20,27 @@
         - go
         - go-tools
 
-  post_tasks:
-    - file:
+    - name: setup GOPATH
+      file:
         path="{{ go_path }}"
         state=directory
         mode=0755 group='staff'
+
+    - name: set file to load Go environment
+      template:
+        src='templates/home/user/.profile_go.j2'
+        dest="{{ ansible_env.HOME }}/.profile_go"
+        mode=0600 group='staff'
+
+    - name: load Go environment on shell
+      lineinfile:
+        dest="{{ ansible_env.HOME }}/.profile"
+        line='source ~/.profile_go'
+
+  post_tasks:
+    - name: load Go generic package dependencies
+      shell: "source ~/.profile_go && go get -u {{ item }}/..."
+      with_items:
+        - github.com/jteeuwen/go-bindata
+        - github.com/rubenv/sql-migrate
+        - github.com/tools/godep

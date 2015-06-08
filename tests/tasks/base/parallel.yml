@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/tasks/parallel.yml
+
+- name: register `which parallel` output in result_which_parallel variable
+  shell: which parallel
+  register: result_which_parallel
+  changed_when: no
+
+- name: is parallel installed?
+  fail:
+    msg="`which parallel` output was {{ result_which_parallel.stdout }} instead of {{ expected_which_parallel }}"
+  when: result_which_parallel.stdout != expected_which_parallel

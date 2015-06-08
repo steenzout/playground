@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/tasks/git.yml
+
+- name: register `which git` output in result_which_git variable
+  shell: which git
+  register: result_which_git
+  changed_when: no
+
+- name: is git installed?
+  fail:
+    msg="`which git` output was {{ result_which_git.stdout }} instead of {{ expected_which_git }}"
+  when: result_which_git.stdout != expected_which_git

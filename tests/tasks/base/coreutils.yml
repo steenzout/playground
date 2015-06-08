@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/tasks/coreutils.yml
+
+- name: register `which gstdbuf` output in result_which_gstdbuf variable
+  shell: which gstdbuf
+  register: result_which_gstdbuf
+  changed_when: no
+
+- name: is gstdbuf installed?
+  fail:
+    msg="`which gstdbuf` output was {{ result_which_gstdbuf.stdout }} instead of {{ expected_which_gstdbuf }}"
+  when: result_which_gstdbuf.stdout != expected_which_gstdbuf

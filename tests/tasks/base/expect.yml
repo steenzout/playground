@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/tasks/expect.yml
+
+- name: register `which expect` output in result_which_expect variable
+  shell: which expect
+  register: result_which_expect
+  changed_when: no
+
+- name: is expect installed?
+  fail:
+    msg="`which expect` output was {{ result_which_expect.stdout }} instead of {{ expected_which_expect }}"
+  when: result_which_expect.stdout != expected_which_expect

@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/test.yml
+
+- name: run all plays
+  include: ../all.yml
+
+- name: tests play
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - tests

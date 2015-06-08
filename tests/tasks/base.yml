@@ -1,0 +1,10 @@
+---
+# file: playbooks/tests/tasks/base.yml
+#
+# Test tasks for base playbook.
+#
+
+- include: base/coreutils.yml
+- include: base/git.yml
+- include: base/expect.yml
+- include: base/parallel.yml

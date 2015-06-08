@@ -1,0 +1,12 @@
+---
+# file: playbooks/tests/tasks/main.yml
+#
+# Test tasks to verify role execution.
+#
+
+- include: base.yml
+- include: cassandra.yml
+- include: go.yml
+- include: groovy.yml
+- include: nodejs.yml
+- include: python.yml

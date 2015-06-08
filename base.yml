@@ -17,3 +17,5 @@
       with_items:
         - coreutils
         - expect
+        - git
+        - parallel

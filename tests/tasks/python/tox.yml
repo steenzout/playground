@@ -1,0 +1,22 @@
+---
+# file: playbooks/tests/tasks/tox.yml
+
+- name: register `which tox` output in result_which_tox variable
+  shell: which tox
+  register: result_which_tox
+  changed_when: no
+
+- name: is tox installed?
+  fail:
+    msg="`which tox` output was {{ result_which_tox.stdout }} instead of {{ expected_which_tox }}"
+  when: result_which_tox.stdout != expected_which_tox
+
+- name: register `which tox-2.7` output in result_which_tox-2.7 variable
+  shell: which tox-2.7
+  register: result_which_tox27
+  changed_when: no
+
+- name: is tox-2.7 installed?
+  fail:
+    msg="`which tox-2.7` output was {{ result_which_tox27.stdout }} instead of {{ expected_which_tox27 }}"
+  when: result_which_tox27.stdout != expected_which_tox27

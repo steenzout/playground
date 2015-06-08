@@ -1,0 +1,22 @@
+---
+# file: playbooks/tests/tasks/virtualenv.yml
+
+- name: register `which virtualenv` output in result_which_virtualenv variable
+  shell: which virtualenv
+  register: result_which_virtualenv
+  changed_when: no
+
+- name: is virtualenv installed?
+  fail:
+    msg="`which virtualenv` output was {{ result_which_virtualenv.stdout }} instead of {{ expected_which_virtualenv }}"
+  when: result_which_virtualenv.stdout != expected_which_virtualenv
+
+- name: register `which virtualenv-2.7` output in result_which_virtualenv-2.7 variable
+  shell: which virtualenv-2.7
+  register: result_which_virtualenv27
+  changed_when: no
+
+- name: is virtualenv-2.7 installed?
+  fail:
+    msg="`which virtualenv-2.7` output was {{ result_which_virtualenv27.stdout }} instead of {{ expected_which_virtualenv27 }}"
+  when: result_which_virtualenv27.stdout != expected_which_virtualenv27

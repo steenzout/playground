@@ -1,0 +1,15 @@
+---
+# file: playbooks/tests/tasks/go.yml
+#
+# Test tasks for Go playbook.
+#
+
+- name: register `which go` output in result_which_go variable
+  shell: which go
+  register: result_which_go
+  changed_when: no
+
+- name: is Go installed?
+  fail:
+    msg="`which go` output was {{ result_which_go.stdout }} instead of {{ expected_which_go }}"
+  when: result_which_go.stdout != expected_which_go

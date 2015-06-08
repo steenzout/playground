@@ -1,0 +1,13 @@
+---
+# file: playbooks/tests/defaults/main.yml
+
+expected_which_go: '/opt/local/bin/go'
+
+expected_which_python27: '/opt/local/bin/python2.7'
+expected_which_python35: '/opt/local/bin/python3.5'
+
+expected_which_tox: '/opt/local/bin/tox'
+expected_which_tox27: '/opt/local/bin/tox-2.7'
+
+expected_which_virtualenv: '/opt/local/bin/virtualenv'
+expected_which_virtualenv27: '/opt/local/bin/virtualenv-2.7'

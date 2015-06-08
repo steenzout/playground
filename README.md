@@ -17,7 +17,7 @@ this playbook cannot run on 1.9.1 on macosx.
 
 | Family | Distribution | Version | Test Status |
 |:-:|:-:|:-:|:-:|
-| MacOSX | MacOSX  | Yosemite  | [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
+| MacOSX | MacOSX  | Yosemite  | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 
 
 ## Requirements

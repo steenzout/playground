@@ -6,6 +6,7 @@ expected_which_git: '/opt/local/bin/git'
 expected_which_expect: '/opt/local/bin/expect'
 expected_which_gstdbuf: '/opt/local/bin/gstdbuf'
 expected_which_parallel: '/opt/local/bin/parallel'
+expected_which_unbuffer: '/opt/local/bin/unbuffer'
 
 # go
 expected_which_go: '/opt/local/bin/go'

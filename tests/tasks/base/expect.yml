@@ -18,5 +18,5 @@
 
 - name: is unbuffer installed?
   fail:
-    msg="`which unbuffer` output was {{ result_which_unbuffer.stdout }} instead of {{ expect_which_unbuffer }}"
-  when: result_which_unbuffer.stdout != expect_which_unbuffer
+    msg="`which unbuffer` output was {{ result_which_unbuffer.stdout }} instead of {{ expected_which_unbuffer }}"
+  when: result_which_unbuffer.stdout != expected_which_unbuffer

@@ -1,0 +1,10 @@
+---
+# file: all.yml
+
+- include: base.yml
+- include: cassandra.yml
+- include: go.yml
+- include: groovy.yml
+- include: java.yml
+- include: nodejs.yml
+- include: python.yml

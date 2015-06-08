@@ -10,3 +10,13 @@
   fail:
     msg="`which expect` output was {{ result_which_expect.stdout }} instead of {{ expected_which_expect }}"
   when: result_which_expect.stdout != expected_which_expect
+
+- name: register `which unbuffer` output in result_which_unbuffer variable
+  shell: which unbuffer
+  register: result_which_unbuffer
+  changed_when: no
+
+- name: is unbuffer installed?
+  fail:
+    msg="`which unbuffer` output was {{ result_which_unbuffer.stdout }} instead of {{ expect_which_unbuffer }}"
+  when: result_which_unbuffer.stdout != expect_which_unbuffer

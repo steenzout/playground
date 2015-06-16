@@ -19,3 +19,19 @@
         - expect
         - git
         - parallel
+
+    - name: ensure ~/.config/git directory exists
+      file:
+        path="{{ ansible_env.HOME }}/.config/git"
+        state=directory
+        recurse=yes
+        mode=0755 group=staff
+
+    - name: copy default system .gitignore rules
+      template:
+        src="{{ item }}"
+        dest="{{ ansible_env.HOME }}/.config/git/ignore"
+        mode=0644 group=staff
+      with_first_found:
+        - "templates/home/user/.config/git/ignore.{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}"
+        - "templates/home/user/.config/git/ignore.{{ ansible_os_family | lower }}"

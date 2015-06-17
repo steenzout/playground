@@ -10,7 +10,8 @@
 [Ansible](http://www.ansible.com/) playbooks to setup my laptop development environment.
 
 Due to [Ansible](http://www.ansible.com/) [issue#10891](https://github.com/ansible/ansible/issues/10891),
-this playbook cannot run on 1.9.1 on macosx.
+playbooks that will ask for sudo password will not run on 1.9.1 on OSX.
+Please use a different [Ansible](http://www.ansible.com/) version.
 
 
 ## Tests

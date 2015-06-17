@@ -39,6 +39,7 @@
     - name: load Go generic package dependencies
       shell: "source ~/.profile_go && go get -u {{ item }}/..."
       with_items:
+        - github.com/golang/lint
         - github.com/jteeuwen/go-bindata
         - github.com/rubenv/sql-migrate
         - github.com/tools/godep

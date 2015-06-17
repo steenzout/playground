@@ -69,6 +69,9 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## Changelog
 
+- vx.x.x : 17 Jun 2015
+    - go.yml
+        - install golang/lint
 - v1.0.0 : 8 Jun 2015
     - setup environment
         - Go

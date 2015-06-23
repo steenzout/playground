@@ -32,6 +32,7 @@ None.
 
 ## Dependencies
 
+- ansiblebit.ccm
 - ansiblebit.macports
 - ansiblebit.oracle-java
 
@@ -67,6 +68,9 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 
 ## Changelog
+
+- v1.0.2 : 23 Jun 2015
+    - added ansiblebit.ccm dependency
 
 - v1.0.0 : 8 Jun 2015
     - setup environment

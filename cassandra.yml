@@ -6,10 +6,5 @@
   gather_facts: yes
   connection: local
 
-  tasks:
-    - macports:
-        name="{{ item }}"
-        state=present
-      sudo: yes
-      with_items:
-        - ccm
+  roles:
+    - { role: ansiblebit.ccm }

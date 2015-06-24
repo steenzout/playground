@@ -13,3 +13,14 @@
       sudo: yes
       with_items:
         - npm
+
+    - npm:
+        name={{ item }}
+        global=yes
+        state=present
+      sudo: yes
+      with_items:
+        - bower
+        - browser-sync
+        - gulp
+        - grunt

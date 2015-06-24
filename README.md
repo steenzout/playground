@@ -70,6 +70,8 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## Changelog
 
+- v1.0.4 : 24 Jun 2015
+    - added installation of npm packages
 - v1.0.2 : 23 Jun 2015
     - added ansiblebit.ccm dependency
     - go.yml

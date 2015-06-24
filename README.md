@@ -10,7 +10,8 @@
 [Ansible](http://www.ansible.com/) playbooks to setup my laptop development environment.
 
 Due to [Ansible](http://www.ansible.com/) [issue#10891](https://github.com/ansible/ansible/issues/10891),
-this playbook cannot run on 1.9.1 on macosx.
+playbooks that will ask for sudo password will not run on 1.9.1 on OSX.
+Please use a different [Ansible](http://www.ansible.com/) version.
 
 
 ## Tests
@@ -69,9 +70,15 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## Changelog
 
+<<<<<<< HEAD
 - v1.0.2 : 23 Jun 2015
     - added ansiblebit.ccm dependency
 
+=======
+- vx.x.x : 17 Jun 2015
+    - go.yml
+        - install golang/lint
+>>>>>>> 1d8b54829448cf64a54dc5846260f499c9fdda74
 - v1.0.0 : 8 Jun 2015
     - setup environment
         - Go

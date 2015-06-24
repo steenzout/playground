@@ -4,7 +4,7 @@
 
 [![Platform](http://img.shields.io/badge/platform-macosx-000000.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/steenzout-playbooks/widgets/project_thin_badge.gif)](https://www.openhub.net/p/steenzout-playbooks/)
+[![Project Stats](https://www.openhub.net/p/steenzout-playground/widgets/project_thin_badge.gif)](https://www.openhub.net/p/steenzout-playbooks/)
 
 [Ansible](http://www.ansible.com/) playbooks to setup my laptop development environment.
 

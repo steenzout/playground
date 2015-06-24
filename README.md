@@ -92,7 +92,7 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## License
 
-[BSD](https://raw.githubusercontent.com/steenzout/playbooks/master/LICENSE)
+[BSD](https://raw.githubusercontent.com/steenzout/playground/master/LICENSE)
 
 
 ## Author Information

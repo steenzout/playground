@@ -1,4 +1,4 @@
-# Playbooks
+# Playground
 
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/steenzout/playbooks/master/LICENSE)
 

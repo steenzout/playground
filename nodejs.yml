@@ -5,6 +5,8 @@
   hosts: localhost
   gather_facts: yes
   connection: local
+  vars:
+    npm_config_prefix: "{{ ansible_env.HOME }}/npm-global"
 
   tasks:
     - macports:
@@ -14,11 +16,28 @@
       with_items:
         - npm
 
+    - name: ensure NPM_CONFIG_PREFIX directory is present
+      file:
+        path="{{ npm_config_prefix }}"
+        state=directory
+        mode=0755 group='staff'
+
+    - name: set file to load NodeJS environment
+      template:
+        src='templates/home/user/.profile_nodejs.j2'
+        dest="{{ ansible_env.HOME }}/.profile_nodejs"
+        mode=0600 group='staff'
+
+    - name: load NodeJS environment on shell
+      lineinfile:
+        dest="{{ ansible_env.HOME }}/.profile"
+        line='source ~/.profile_nodejs'
+
     - npm:
         name={{ item }}
         global=yes
+        path="{{ npm_config_prefix }}"
         state=present
-      sudo: yes
       with_items:
         - bower
         - browser-sync

@@ -1,0 +1,18 @@
+---
+# file: ruby.yml
+
+- name: ruby play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  tasks:
+    - macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - ruby22
+        - autoconf
+        - automake
+        - apple-gcc42

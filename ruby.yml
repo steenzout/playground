@@ -13,6 +13,7 @@
       sudo: yes
       with_items:
         - ruby22
+        - ruby21
         - autoconf
         - automake
         - apple-gcc42

@@ -69,6 +69,13 @@ This playbook will setup my Python 2.7 and 3.5 environment.
 
 ## Changelog
 
+- v1.0.8 : 9 Jul 2015
+    - added .gitignore rules for JetBrains IDEs, Textmate and vim
+    - improved logic to build global .gitignore file
+    - added installation of rvm port
+    - removed installation of ruby* ports
+- v1.0.6 : 30 Jun 2015 
+    - added setup of Ruby development environment
 - v1.0.4 : 24 Jun 2015
     - added installation of npm packages
 - v1.0.2 : 23 Jun 2015

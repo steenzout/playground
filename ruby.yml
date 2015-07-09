@@ -12,8 +12,7 @@
         state=present
       sudo: yes
       with_items:
-        - ruby22
-        - ruby21
+        - rvm
         - autoconf
         - automake
         - apple-gcc42

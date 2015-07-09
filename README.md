@@ -67,6 +67,13 @@ This playbook will setup my Python 2.7 and 3.5 environment.
     $ tox -e playbook -- python.yml
 
 
+### ruby
+
+This playbook will setup my Ruby environment.
+
+    $ tox -e playbook -- ruby.yml
+
+
 ## Changelog
 
 - v1.0.8 : 9 Jul 2015

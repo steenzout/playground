@@ -22,7 +22,7 @@
 
     - name: ensure ~/.config/git directory exists
       file:
-        path="{{ ansible_env.HOME }}/.config/git"
+        path="{{ ansible_env.HOME }}/.config/git/ignore.d"
         state=directory
         recurse=yes
         mode=0755 group=staff
@@ -30,8 +30,24 @@
     - name: copy default system .gitignore rules
       template:
         src="{{ item }}"
-        dest="{{ ansible_env.HOME }}/.config/git/ignore"
+        dest="{{ ansible_env.HOME }}/.config/git/ignore.d/"
         mode=0644 group=staff
       with_first_found:
-        - "templates/home/user/.config/git/ignore.{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}"
-        - "templates/home/user/.config/git/ignore.{{ ansible_os_family | lower }}"
+        - "templates/home/user/.config/git/ignore.d/ignore.{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}"
+        - "templates/home/user/.config/git/ignore.d/ignore.{{ ansible_os_family | lower }}"
+
+    - name: copy text editor / IDE .gitignore rules
+      template:
+        src='templates/home/user/.config/git/ignore.d/ignore.{{ item }}'
+        dest="{{ ansible_env.HOME }}/.config/git/ignore.d/"
+        mode=0644 group=staff
+      with_items:
+        - jetbrains
+        - textmate
+        - vim
+
+    - name: assemble gitignore rules
+      assemble:
+        src="{{ ansible_env.HOME }}/.config/git/ignore.d"
+        dest="{{ ansible_env.HOME }}/.config/git/ignore"
+        mode=0644 group=staff

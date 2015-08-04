@@ -1,0 +1,18 @@
+---
+# file: amazon.yml
+
+- name: Amazon AWS tools play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  tasks:
+    - name: install ports
+      macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - s3cmd
+
+  // TODO setup ~/.s3cfg?

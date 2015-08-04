@@ -38,6 +38,8 @@
         global=yes
         path="{{ npm_config_prefix }}"
         state=present
+      environment:
+        NPM_CONFIG_PREFIX: "{{ npm_config_prefix }}"
       with_items:
         - bower
         - browser-sync

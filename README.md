@@ -82,7 +82,7 @@ This playbook will setup my Ruby environment.
 
 This playbook will setup development environment for the [macports](https://www.macports.org) project.
 
-    $ tox -e playbook -- projecgts/macports.yml
+    $ tox -e playbook -- projects/macports.yml
 
 
 ## Changelog

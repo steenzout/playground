@@ -87,6 +87,8 @@ This playbook will setup development environment for the [macports](https://www.
 
 ## Changelog
 
+- 
+    - `playbook.sh` now uses localhost as the default inventory and local as the default connection
 - v1.0.10 : 2 Oct 2015
     - added programming language related playbooks directory
     - added projects related playbooks directory

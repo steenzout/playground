@@ -2,5 +2,5 @@
 
 source .tox/playbook/bin/activate
 
-ansible-playbook $@
+ansible-playbook -i localhost, --connection=local $@
 

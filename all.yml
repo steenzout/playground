@@ -2,9 +2,9 @@
 # file: all.yml
 
 - include: base.yml
-- include: cassandra.yml
-- include: go.yml
-- include: groovy.yml
-- include: java.yml
-- include: nodejs.yml
-- include: python.yml
+- include: software/cassandra.yml
+- include: programming/go.yml
+- include: programming/groovy.yml
+- include: programming/java.yml
+- include: programming/nodejs.yml
+- include: programming/python.yml

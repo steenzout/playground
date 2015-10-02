@@ -1,0 +1,28 @@
+---
+# file: macports.yml
+
+- include: ../base.yml
+
+- name: macports project setup play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  tasks:
+    - macports:
+        name="{{ item }}"
+        state=present
+      sudo: yes
+      with_items:
+        - subversion 
+
+    - name: setup project directory
+      file:
+        path="{{ ansible_env.HOME }}/Documents/Projects/macports.org"
+        recurse=yes
+        state=directory
+
+    - name: checkout macports svn repository
+      subversion:
+        repo='https://svn.macports.org/repository/macports/trunk'
+        dest="{{ ansible_env.HOME }}/Documents/Projects/macports.org/trunk"

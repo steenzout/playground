@@ -39,43 +39,61 @@ None.
 
 ## Playbooks
 
-### go
+### programming
+
+#### go
 
 This playbook will setup my Go environment.
 
-    $ tox -e playbook -- go.yml
+    $ tox -e playbook -- programming/go.yml
 
 
-### groovy
+#### groovy
 
 This playbook will setup my Groovy environment.
 
-    $ tox -e playbook -- groovy.yml
+    $ tox -e playbook -- programming/groovy.yml
 
 
-### java
+#### java
 
 This playbook will setup my Java environment.
 
-    $ tox -e playbook -- java.yml
+    $ tox -e playbook -- programming/java.yml
 
 
-### python
+#### python
 
 This playbook will setup my Python 2.7 and 3.5 environment.
 
-    $ tox -e playbook -- python.yml
+    $ tox -e playbook -- programming/python.yml
 
 
-### ruby
+#### ruby
 
 This playbook will setup my Ruby environment.
 
-    $ tox -e playbook -- ruby.yml
+    $ tox -e playbook -- programming/ruby.yml
+
+
+### projects
+
+#### macports
+
+This playbook will setup development environment for the [macports](https://www.macports.org) project.
+
+    $ tox -e playbook -- projecgts/macports.yml
 
 
 ## Changelog
 
+- v1.0.10 : 2 Oct 2015
+    - added programming language related playbooks directory
+    - added projects related playbooks directory
+    - added software related playbooks directory
+    - moved programming language playbooks to the programming directory
+    - moved software playbooks to the software directory    
+    - updated ansiblebit.oracle-java dependency to v4.9.2
 - v1.0.8 : 9 Jul 2015
     - added .gitignore rules for JetBrains IDEs, Textmate and vim
     - improved logic to build global .gitignore file

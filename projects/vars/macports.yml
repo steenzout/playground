@@ -1,0 +1,10 @@
+---
+# file: projects/vars/macports.yml
+
+project_dir: "{{ ansible_env.HOME }}/Documents/Projects/macports.org"
+project_dir_ports: "{{ ansible_env.HOME }}/ports"
+
+project_ports:
+  - { group: python, name: py-pluggy }
+  - { group: python, name: py-tox }
+  - { group: sysutils, name: ansible }

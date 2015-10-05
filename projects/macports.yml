@@ -1,5 +1,5 @@
 ---
-# file: macports.yml
+# file: projects/macports.yml
 
 - include: ../base.yml
 
@@ -9,20 +9,62 @@
   connection: local
 
   tasks:
+    - include_vars: vars/macports.yml
+
     - macports:
         name="{{ item }}"
         state=present
       sudo: yes
       with_items:
-        - subversion 
+        - subversion
+      tags: setup
 
     - name: setup project directory
       file:
-        path="{{ ansible_env.HOME }}/Documents/Projects/macports.org"
+        path="{{ project_dir }}"
+        owner="{{ ansible_env.USER }}" mode=0755
         recurse=yes
         state=directory
+      tags: setup
 
     - name: checkout macports svn repository
       subversion:
         repo='https://svn.macports.org/repository/macports/trunk'
-        dest="{{ ansible_env.HOME }}/Documents/Projects/macports.org/trunk"
+        dest="{{ project_dir }}/trunk"
+      tags: setup
+
+    - name: setup local ports repository
+      file:
+        path="{{ project_dir_ports }}"
+        owner="{{ ansible_env.USER }}" mode=0755
+        state=directory
+      tags: setup
+
+    - name: link local ports repository to projects directory
+      file:
+        src="{{ project_dir_ports }}"
+        dest="{{ project_dir }}/local"
+        owner="{{ ansible_env.USER }}" mode=0755
+        state=link
+      tags: setup
+
+    - name: add local ports repository
+      lineinfile:
+        line="file://{{ project_dir_ports }} [nosync]"
+        dest='/opt/local/etc/macports/sources.conf'
+        insertbefore='^rsync://rsync.macports.org'
+        state=present
+      sudo: yes
+      tags: setup
+
+    - name: setup ports repositories
+      file:
+        path="{{ project_dir_ports }}/{{ item.group }}/{{ item.name }}"
+        owner="{{ ansible_env.USER }}" mode=0755
+        recurse=yes
+        state=directory
+      with_items:
+        - { group: python, name: py-tox }
+        - { group: python, name: py-pluggy }
+        - { group: sysutils, name: ansible }
+      tags: work

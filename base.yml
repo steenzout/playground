@@ -5,6 +5,7 @@
   hosts: localhost
   gather_facts: yes
   connection: local
+  tags: base
 
   roles:
     - { role: ansiblebit.macports, macports_upgrade_outdated: yes }

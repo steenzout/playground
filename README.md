@@ -32,9 +32,9 @@ None.
 
 ## Dependencies
 
-- ansiblebit.ccm
-- ansiblebit.macports
-- ansiblebit.oracle-java
+- [ansiblebit.ccm](https://github.com/ansiblebit/ccm)
+- [ansiblebit.macports](https://github.com/ansiblebit/macports)
+- [ansiblebit.oracle-java](https://github.com/ansiblebit/oracle-java)
 
 
 ## Playbooks

@@ -85,42 +85,6 @@ This playbook will setup development environment for the [macports](https://www.
     $ tox -e playbook -- projects/macports.yml
 
 
-## Changelog
-
-- v
-    - updated ansiblebit.macports dependency to 1.9.8
-- v1.0.12 : 5 Oct 2015
-    - setup of [macports](https://www.macports.org) development environment
-    - `playbook.sh` now uses localhost as the default inventory and local as the default connection
-- v1.0.10 : 2 Oct 2015
-    - added programming language related playbooks directory
-    - added projects related playbooks directory
-    - added software related playbooks directory
-    - moved programming language playbooks to the programming directory
-    - moved software playbooks to the software directory    
-    - updated ansiblebit.oracle-java dependency to v4.9.2
-- v1.0.8 : 9 Jul 2015
-    - added .gitignore rules for JetBrains IDEs, Textmate and vim
-    - improved logic to build global .gitignore file
-    - added installation of rvm port
-    - removed installation of ruby* ports
-- v1.0.6 : 30 Jun 2015 
-    - added setup of Ruby development environment
-- v1.0.4 : 24 Jun 2015
-    - added installation of npm packages
-- v1.0.2 : 23 Jun 2015
-    - added ansiblebit.ccm dependency
-    - go.yml
-        - install golang/lint
-- v1.0.0 : 8 Jun 2015
-    - setup environment
-        - Go
-        - Groovy
-        - Java
-        - NodeJS
-        - Python
-
-
 ## Links
 
 - [ansiblebit.ccm](https://github.com/ansiblebit/ccm/)

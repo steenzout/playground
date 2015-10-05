@@ -88,7 +88,7 @@ This playbook will setup development environment for the [macports](https://www.
 ## Changelog
 
 - v
-    - updated ansiblebit.macports dependency to 1.0.6
+    - updated ansiblebit.macports dependency to 1.9.8
 - v1.0.12 : 5 Oct 2015
     - setup of [macports](https://www.macports.org) development environment
     - `playbook.sh` now uses localhost as the default inventory and local as the default connection

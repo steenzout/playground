@@ -13,6 +13,12 @@ playbooks that will ask for sudo password will not run on 1.9.1 on OSX.
 Please use a different [Ansible](http://www.ansible.com/) version.
 
 
+## Requirements
+
+- [XCode](https://developer.apple.com/xcode/)
+- [macports](http://macports.org)
+
+
 ## Tests
 
 | Family | Distribution | Version | Test Status |

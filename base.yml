@@ -53,3 +53,8 @@
         src="{{ ansible_env.HOME }}/.config/git/ignore.d"
         dest="{{ ansible_env.HOME }}/.config/git/ignore"
         mode=0644 group=staff
+
+    - name: fix CoreSimulatorService permissions bug
+      file:
+        path='/Applications/Xcode.app/Contents/Developer/Library/PrivateFrameworks/CoreSimulator.framework/Versions/A/XPCServices/com.apple.CoreSimulator.CoreSimulatorService.xpc'
+        mode=0755 owner=root group=wheel

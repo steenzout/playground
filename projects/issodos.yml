@@ -1,0 +1,10 @@
+---
+# file: projects/issodos.yml
+
+- include: ../base.yml
+
+- name: issodos project setup play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+

@@ -1,0 +1,10 @@
+---
+# file: projects/diffdibb.yml
+
+- include: ../base.yml
+
+- name: diffdibb project setup play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+

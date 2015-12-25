@@ -1,0 +1,10 @@
+---
+# file: projects/collectdbit.yml
+
+- include: ../base.yml
+
+- name: collectdbit project setup play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+

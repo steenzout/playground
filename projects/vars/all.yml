@@ -1,0 +1,8 @@
+---
+# file: projects/vars/all.yml
+#
+# project_dir: the root directory for projects.
+#
+
+project_dir: "{{ ansible_env.HOME }}/Projects"
+

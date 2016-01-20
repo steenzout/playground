@@ -21,7 +21,7 @@
 
     - name: setup project directory
       file:
-        path="{{ project_dir }}"
+        path="{{ project_dir }}/macports"
         owner="{{ ansible_env.USER }}" mode=0755
         recurse=yes
         state=directory
@@ -30,7 +30,7 @@
     - name: checkout macports svn repository
       subversion:
         repo='https://svn.macports.org/repository/macports/trunk'
-        dest="{{ project_dir }}/trunk"
+        dest="{{ project_dir }}/macports/trunk"
       tags: setup
 
     - name: setup local ports repository
@@ -43,7 +43,7 @@
     - name: link local ports repository to projects directory
       file:
         src="{{ project_dir_ports }}"
-        dest="{{ project_dir }}/local"
+        dest="{{ project_dir }}/macports/local"
         owner="{{ ansible_env.USER }}" mode=0755
         state=link
       tags: setup

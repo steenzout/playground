@@ -8,7 +8,9 @@
   tags: base
 
   roles:
-    - { role: ansiblebit.macports, macports_upgrade_outdated: yes }
+    - role: ansiblebit.macports
+      macports_upgrade_outdated: yes
+      tags: macports
 
   tasks:
     - macports:
@@ -21,6 +23,7 @@
         - expect
         - git
         - parallel
+      tags: macports
 
     - name: ensure ~/.config/git directory exists
       file:
@@ -58,3 +61,5 @@
       file:
         path='/Applications/Xcode.app/Contents/Developer/Library/PrivateFrameworks/CoreSimulator.framework/Versions/A/XPCServices/com.apple.CoreSimulator.CoreSimulatorService.xpc'
         mode=0755 owner=root group=wheel
+      sudo: yes
+

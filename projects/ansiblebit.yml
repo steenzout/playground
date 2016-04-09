@@ -1,0 +1,10 @@
+---
+# file: projects/ansiblebit.yml
+
+- include: ../base.yml
+
+- name: ansiblebit project setup play
+  hosts: localhost
+  gather_facts: yes
+  connection: local
+

@@ -15,6 +15,9 @@
         - python27
         - python35
         - python_select
+        - py27-mock
+        - py27-pylint
+        - py27-pytest
         - py27-tox
         - py27-virtualenv
         - tox_select

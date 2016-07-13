@@ -40,6 +40,8 @@
       shell: "source ~/.profile_go && go get -u {{ item }}/..."
       with_items:
         - github.com/golang/lint
+        - github.com/gordonklaus/ineffassign
+        - github.com/mattes/migrate
         - github.com/jteeuwen/go-bindata
         - github.com/rubenv/sql-migrate
         - github.com/tools/godep

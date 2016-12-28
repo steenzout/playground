@@ -17,6 +17,7 @@
         - python_select
         - python3_select
         - py27-mock
+        - py27-pip
         - py27-pylint
         - py27-pytest
         - py27-readline

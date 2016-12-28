@@ -19,6 +19,7 @@
         - py27-mock
         - py27-pylint
         - py27-pytest
+        - py27-readline
         - py27-tox
         - py27-virtualenv
         - tox_select

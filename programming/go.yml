@@ -6,7 +6,7 @@
   gather_facts: yes
   connection: local
   vars:
-    go_path: "{{ ansible_env.HOME }}/go"
+    go_path: "${HOME}/go"
 
   tasks:
     - name: install ports

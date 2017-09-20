@@ -20,7 +20,7 @@
     - macports:
         name="{{ item }}"
         state=present
-      sudo: yes
+      become: yes
       with_items:
         - gradle
         - maven3

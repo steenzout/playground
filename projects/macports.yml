@@ -14,7 +14,7 @@
     - macports:
         name="{{ item }}"
         state=present
-      sudo: yes
+      become: yes
       with_items:
         - subversion
       tags: setup
@@ -54,7 +54,7 @@
         dest='/opt/local/etc/macports/sources.conf'
         insertbefore='^rsync://rsync.macports.org'
         state=present
-      sudo: yes
+      become: yes
       tags: setup
 
     - name: setup ports repositories

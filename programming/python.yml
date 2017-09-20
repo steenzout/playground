@@ -20,7 +20,7 @@
         - py27-pip
         - py27-pylint
         - py27-pytest
-        - py27-readline
+        - py27-gnureadline
         - py27-tox
         - py27-virtualenv
         - tox_select

@@ -14,7 +14,7 @@
         state=present
       sudo: yes
       with_items:
-        - npm
+        - npm5
 
     - name: ensure NPM_CONFIG_PREFIX directory is present
       file:

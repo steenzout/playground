@@ -39,9 +39,14 @@
     - name: load Go generic package dependencies
       shell: "source ~/.profile_go && go get -u {{ item }}/..."
       with_items:
-        - github.com/golang/lint
+        - github.com/client9/misspell/cmd/misspell
+        - github.com/fzipp/gocyclo
+        - github.com/golang/lint/golint
         - github.com/gordonklaus/ineffassign
+        - github.com/h12w/gosweep
         - github.com/mattes/migrate
+        - github.com/mattn/goveralls
         - github.com/jteeuwen/go-bindata
         - github.com/rubenv/sql-migrate
         - github.com/tools/godep
+        - golang.org/x/tools/cmd/goimports

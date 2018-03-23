@@ -50,6 +50,7 @@
         - jetbrains
         - textmate
         - vim
+        - visualstudiocode
 
     - name: assemble gitignore rules
       assemble:

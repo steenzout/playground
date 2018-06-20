@@ -13,7 +13,8 @@
       macports:
         name="{{ item }}"
         state=present
-      sudo: yes
+      become: yes
+      when: ansible_os_family | lower == 'darwin' and ansible_distribution | lower == 'macosx'
       with_items:
         - go
         - go-tools
@@ -22,13 +23,13 @@
       file:
         path="{{ go_path }}"
         state=directory
-        mode=0755 group='staff'
+        mode=0755
 
     - name: set file to load Go environment
       template:
         src='templates/home/user/.profile_go.j2'
         dest="{{ ansible_env.HOME }}/.profile_go"
-        mode=0600 group='staff'
+        mode=0600
 
     - name: load Go environment on shell
       lineinfile:
@@ -36,12 +37,13 @@
         line='source ~/.profile_go'
 
   post_tasks:
-    - name: load Go generic package dependencies
-      shell: "source ~/.profile_go && go get -u {{ item }}/..."
+    - name: load Go generic packages
+      shell: "go get -u {{ item }}/..."
       with_items:
         - github.com/client9/misspell/cmd/misspell
         - github.com/fzipp/gocyclo
         - github.com/golang/lint/golint
+        - github.com/golangci/golangci-lint/cmd/golangci-lint
         - github.com/gordonklaus/ineffassign
         - github.com/h12w/gosweep
         - github.com/mattes/migrate
@@ -50,3 +52,5 @@
         - github.com/rubenv/sql-migrate
         - github.com/tools/godep
         - golang.org/x/tools/cmd/goimports
+      env:
+        GOPATH="{{ ansible_env.HOME }}/go"

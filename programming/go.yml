@@ -43,6 +43,8 @@
         - github.com/client9/misspell/cmd/misspell
         - github.com/fzipp/gocyclo
         - github.com/golang/lint/golint
+        - github.com/golang/protobuf/proto
+        - github.com/golang/protobuf/protoc-gen-go
         - github.com/golangci/golangci-lint/cmd/golangci-lint
         - github.com/gordonklaus/ineffassign
         - github.com/h12w/gosweep

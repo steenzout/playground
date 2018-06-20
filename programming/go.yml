@@ -54,5 +54,6 @@
         - github.com/rubenv/sql-migrate
         - github.com/tools/godep
         - golang.org/x/tools/cmd/goimports
+        - google.golang.org/grpc
       env:
         GOPATH="{{ ansible_env.HOME }}/go"

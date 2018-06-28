@@ -13,7 +13,7 @@
       sudo: yes
       with_items:
         - python27
-        - python35
+        - python36
         - python_select
         - python3_select
         - py27-mock

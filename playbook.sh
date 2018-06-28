@@ -2,5 +2,5 @@
 
 source .tox/playbook/bin/activate
 
-ansible-playbook -i localhost, --connection=local $@
+ansible-playbook --ask-become-pass -i localhost, --connection=local $@
 

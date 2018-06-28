@@ -1,5 +1,5 @@
 - src: ansiblebit.macports
-  version: 1.9.14
+  version: 1.9.18
 
 - src: ansiblebit.oracle-java
   version: 5.14.14

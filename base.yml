@@ -16,7 +16,7 @@
     - macports:
         name="{{ item }}"
         state=present
-      sudo: yes
+      become: yes
       with_items:
         - bash
         - coreutils
@@ -30,13 +30,13 @@
         path="{{ ansible_env.HOME }}/.config/git/ignore.d"
         state=directory
         recurse=yes
-        mode=0755 group=staff
+        mode=0755
 
     - name: copy default system .gitignore rules
       template:
         src="{{ item }}"
         dest="{{ ansible_env.HOME }}/.config/git/ignore.d/"
-        mode=0644 group=staff
+        mode=0644
       with_first_found:
         - "templates/home/user/.config/git/ignore.d/ignore.{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}"
         - "templates/home/user/.config/git/ignore.d/ignore.{{ ansible_os_family | lower }}"
@@ -45,7 +45,7 @@
       template:
         src='templates/home/user/.config/git/ignore.d/ignore.{{ item }}'
         dest="{{ ansible_env.HOME }}/.config/git/ignore.d/"
-        mode=0644 group=staff
+        mode=0644
       with_items:
         - jetbrains
         - textmate
@@ -55,11 +55,4 @@
       assemble:
         src="{{ ansible_env.HOME }}/.config/git/ignore.d"
         dest="{{ ansible_env.HOME }}/.config/git/ignore"
-        mode=0644 group=staff
-
-    - name: fix CoreSimulatorService permissions bug
-      file:
-        path='/Applications/Xcode.app/Contents/Developer/Library/PrivateFrameworks/CoreSimulator.framework/Versions/A/XPCServices/com.apple.CoreSimulator.CoreSimulatorService.xpc'
-        mode=0755 owner=root group=wheel
-      sudo: yes
-
+        mode=0644

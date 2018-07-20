@@ -20,6 +20,7 @@
       with_items:
         - bash
         - coreutils
+        - direnv
         - expect
         - git
         - parallel

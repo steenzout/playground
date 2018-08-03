@@ -25,6 +25,7 @@
         - git
         - gnupg2
         - parallel
+        - shellcheck
       tags: macports
 
     - name: ensure ~/.config/git directory exists

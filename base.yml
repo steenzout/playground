@@ -23,6 +23,7 @@
         - direnv
         - expect
         - git
+        - gnupg2
         - parallel
       tags: macports
 
